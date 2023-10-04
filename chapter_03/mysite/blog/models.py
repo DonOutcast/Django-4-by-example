@@ -5,7 +5,6 @@ from django.urls import reverse
 from taggit.managers import TaggableManager
 
 
-
 class PbulishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Post.Status.PUBLISHED)
@@ -69,4 +68,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.name} on {self.post}"
-

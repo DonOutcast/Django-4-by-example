@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.postgres',
+
+    # packages
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +93,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog',
         'USER': 'blog',
-        'PASSWORD': '123',
+        'PASSWORD': 'blog',
+        'HOST': "localhost",
+        "PORT": 5432
     }
 }
 
