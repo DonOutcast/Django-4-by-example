@@ -9,3 +9,14 @@ repos:
         entry: isort
         language: python
         types: [ python ]
+
+      - id: absolufy-imports
+        name: absolufy-imports
+        entry: absolufy-imports
+        language: python
+        types: [python]
+        args: [
+          "--application-directories",
+          "."
+        ]
+
