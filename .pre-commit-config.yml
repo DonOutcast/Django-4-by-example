@@ -1,0 +1,8 @@
+repos:
+  - repos: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [python]
