@@ -1,5 +1,8 @@
+default_language_version:
+    python: python3.11
+
 repos:
-  - repos: local
+  - repo: local
     hooks:
       - id: isort
         name: isort
