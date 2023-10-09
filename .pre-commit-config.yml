@@ -8,4 +8,4 @@ repos:
         name: isort
         entry: isort
         language: python
-        types: [python]
+        types: [ python ]
