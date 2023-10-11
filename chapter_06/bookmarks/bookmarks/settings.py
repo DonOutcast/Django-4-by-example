@@ -9,9 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import pathlib
 from pathlib import Path
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,6 +48,7 @@ INSTALLED_APPS = [
 
     'social_django',
     'django_extensions',
+    "easy_thumbnails",
 
 ]
 
@@ -87,12 +87,8 @@ WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'blog',
-        'PASSWORD': 'blog',
-        'HOST': "localhost",
-        "PORT": 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -151,7 +147,6 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
-
 SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -164,3 +159,8 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 ]
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/javascript", '.js', True)
+    mimetypes.add_type("text/css", ".css", True)
